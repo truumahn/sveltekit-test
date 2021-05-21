@@ -1,0 +1,13 @@
+version: '3.6'
+services:
+  node:
+    image: 'node:16.2-alpine'
+    working_dir: /home/node/app
+    command: 'yarn run dev --host'
+    ports:
+      # Server
+      - '3000:3000'
+      # Vite
+      - '24678:24678'
+    volumes:
+      - ./:/home/node/app
